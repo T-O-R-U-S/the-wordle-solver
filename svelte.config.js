@@ -9,7 +9,7 @@ const config = {
 			pages: 'docs',
 			assets: 'docs',
 			fallback: null,
-			precompress: false,
+			precompress: false
 		}),
 		paths: {
 			base: '/the-wordle-solver'
