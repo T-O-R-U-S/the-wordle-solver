@@ -5,7 +5,7 @@ accurate results.
 
 ### Algorithm
 
-The algorithm used to solve the Wordle riddles is fairly simple.
+The algorithm I implemented to solve the Wordle riddles is fairly simple.
 
 First, it takes each letter and finds how many unique letters are in it.
 
@@ -19,7 +19,12 @@ table for the most frequent letters in the English language. I chose this over
 word frequency because word frequency would require a much larger table.
 
 The third factor is gray letters; any words that contains a letter that Wordle
-has informed the player is not in the word get pruned.
+has informed the player is not in the word get pruned. Sometimes though,
+you will have one letter that matches either a yellow or a green; these
+cases are handled specially. If there is one L yellow and one gray, then
+it will search for words that have only one L. If there are two yellow Ls,
+then it will search for words that have exactly two Ls, and so on. If
+there is a green Ls and gray Ls, then it will do the same.
 
 The fourth factor is yellow letters; any words that do not contain the letter
 get pruned, and any words that *do* contain the letter, but have the letter

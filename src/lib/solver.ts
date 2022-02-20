@@ -5793,6 +5793,46 @@ type char = `${'a' | 'b' | 'c' | 'd' | 'e' | 'f' | 'g' | 'h' | 'i' | 'j' | 'k'
                | 'l' | 'm' | 'n' | 'o' | 'p' | 'q' | 'r' | 's' | 't' | 'u'
                | 'v' | 'w' | 'x' | 'y' | 'z'}`;
 
+export class NotAt {
+    char: char;
+    pos: number;
+
+    constructor(char: char, pos: number) {
+        this.char = char;
+        this.pos = pos;
+    }
+
+    apply(text: string) {
+        if (text[this.pos] == this.char) {
+            return false
+        }
+
+        return true
+    }
+}
+
+export class OnlyOccurance {
+    char: char;
+    occurences: number;
+
+    constructor(char: char, occurences: number) {
+        this.char = char;
+        this.occurences = occurences
+    }
+
+    apply(text: string) {
+        let occurences = 0;
+
+        for (let char of text) {
+            if (char == this.char) {
+                occurences++;
+            }
+        }
+
+        return occurences == this.occurences
+    }
+}
+
 export class No {
 	char: char;
 
@@ -5842,7 +5882,7 @@ export class Exact {
 	}
 }
 
-type condition = Exact | No | Some;
+type condition = Exact | No | NotAt | Some;
 
 export function dict(criteria: condition[], words: string[] = default_words): string[] {
 	words = words.filter((v, i) => {
