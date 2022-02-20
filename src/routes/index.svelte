@@ -37,6 +37,16 @@
 	}
 </script>
 
+<style lang="postcss">
+	.green_box {
+		@apply border-8 rounded-xl border-green-300 m-3 text-7xl w-[112px] font-extrabold shadow-md text-center uppercase;
+	}
+
+	.yellow_box {
+		@apply border-8 rounded-xl border-yellow-300 m-3 text-7xl w-[112px] font-extrabold shadow-md text-center uppercase;
+	}
+</style>
+
 <div class="flex justify-center items-center w-full flex-col">
 	<h1 class="text-2xl mx-auto">
 		<span class="text-gray-600">Gray</span>
@@ -47,7 +57,7 @@
 		type="text"
 		name="grays"
 		id="gray"
-		class="border-8 rounded-xl border-gray-300 m-3 text-7xl w-1/2 mx-auto font-extrabold shadow-md"
+		class="border-8 rounded-xl border-gray-300 m-3 text-7xl w-1/2 mx-auto font-extrabold shadow-md uppercase"
 	/>
 
 	<br />
@@ -63,31 +73,31 @@
 			type="text"
 			name="yellow-1"
 			id="yellow-1"
-			class="border-8 rounded-xl border-yellow-300 m-3 text-7xl w-[112px] font-extrabold shadow-md"
+			class="yellow_box"
 		/>
 		<input
 			type="text"
 			name="yellow-2"
 			id="yellow-2"
-			class="border-8 rounded-xl border-yellow-300 m-3 text-7xl w-[112px] font-extrabold shadow-md"
+			class="yellow_box"
 		/>
 		<input
 			type="text"
 			name="yellow-3"
 			id="yellow-3"
-			class="border-8 rounded-xl border-yellow-300 m-3 text-7xl w-[112px] font-extrabold shadow-md"
+			class="yellow_box"
 		/>
 		<input
 			type="text"
 			name="yellow-4"
 			id="yellow-4"
-			class="border-8 rounded-xl border-yellow-300 m-3 text-7xl w-[112px] font-extrabold shadow-md"
+			class="yellow_box"
 		/>
 		<input
 			type="text"
 			name="yellow-5"
 			id="yellow-5"
-			class="border-8 rounded-xl border-yellow-300 m-3 text-7xl w-[112px] font-extrabold shadow-md"
+			class="yellow_box"
 		/>
 	</div>
 
@@ -103,31 +113,31 @@
 			type="text"
 			name="green-1"
 			id="green-1"
-			class="border-8 rounded-xl border-green-300 m-3 text-7xl w-[112px] font-extrabold shadow-md"
+			class="green_box"
 		/>
 		<input
 			type="text"
 			name="green-2"
 			id="green-2"
-			class="border-8 rounded-xl border-green-300 m-3 text-7xl w-[112px] font-extrabold shadow-md"
+			class="green_box"
 		/>
 		<input
 			type="text"
 			name="green-3"
 			id="green-3"
-			class="border-8 rounded-xl border-green-300 m-3 text-7xl w-[112px] font-extrabold shadow-md"
+			class="green_box"
 		/>
 		<input
 			type="text"
 			name="green-4"
 			id="green-4"
-			class="border-8 rounded-xl border-green-300 m-3 text-7xl w-[112px] font-extrabold shadow-md"
+			class="green_box"
 		/>
 		<input
 			type="text"
 			name="green-5"
 			id="green-5"
-			class="border-8 rounded-xl border-green-300 m-3 text-7xl w-[112px] font-extrabold shadow-md"
+			class="green_box"
 		/>
 	</div>
 
@@ -142,7 +152,7 @@
 </div>
 
 <div class="flex flex-wrap">
-	<Top word={words.shift()} />
+	<Top word={words.shift() ?? "Looks like we're stumped!"} />
 
 	{#each words as word}
 		<Guess {word} />
