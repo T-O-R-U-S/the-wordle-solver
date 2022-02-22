@@ -19,6 +19,10 @@
 				return;
 			}
 			if(greens.includes(v)) {
+				let occurences = 0;
+				yellows.forEach(c => v == c ? occurences++ : 0);
+				greens.forEach(c => v == c ? occurences++ : 0);
+				criteria.push(new OnlyOccurance(v, occurences));
 				criteria.push(new NotAt(v, i));
 			}
 			if(yellows.includes(v) || greens.includes(v)) {
@@ -26,6 +30,7 @@
 				yellows.forEach(c => v == c ? occurences++ : 0);
 				greens.forEach(c => v == c ? occurences++ : 0);
 				criteria.push(new OnlyOccurance(v, occurences));
+				criteria.push(new NotAt(v, i));
 			}
 			if(!greens.includes(v) && !yellows.includes(v)) {
 				criteria.push(new No(v));
