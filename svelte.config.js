@@ -10,7 +10,10 @@ const config = {
 			assets: 'docs',
 			fallback: null,
 			precompress: false
-		})
+		}),
+		paths: {
+			base: 'the-wordle-solver'
+		}
 	},
 
 	preprocess: [
