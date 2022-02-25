@@ -41,7 +41,7 @@
 			if (v == '') {
 				return
 			}
-			if(yellows.includes(v) || greens.includes(v)) {
+			if(grays.includes(v) || greens.includes(v)) {
 				let occurences = 0;
 				yellows.forEach(c => v == c ? occurences++ : 0);
 				greens.forEach(c => v == c ? occurences++ : 0);
@@ -54,7 +54,7 @@
 			if (v == '') {
 				return;
 			}
-			if(yellows.includes(v) || greens.includes(v)) {
+			if(yellows.includes(v) || grays.includes(v)) {
 				let occurences = 0;
 				yellows.forEach(c => v == c ? occurences++ : 0);
 				greens.forEach(c => v == c ? occurences++ : 0);
