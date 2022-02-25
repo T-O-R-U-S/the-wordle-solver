@@ -12,7 +12,7 @@ const config = {
 			precompress: false
 		}),
 		paths: {
-			base: 'the-wordle-solver'
+			base: '/the-wordle-solver'
 		}
 	},
 
